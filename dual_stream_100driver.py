@@ -700,13 +700,13 @@ class FerModel(object):
 
     def train(self):
         X_train = np.load('./driver_feature_small_driver100/train/images.npy')
-        X_train = X_train.astype(np.float16)
+        X_train = X_train.astype(np.float32)
         X_train = X_train.reshape([-1, 224, 224, 3])
-        np.random.seed(42)
+        np.random.seed(2025)
         np.random.shuffle(X_train)
 
         y_train = np.load('./driver_feature_small_driver100/train/labels.npy')
-        np.random.seed(42)
+        np.random.seed(2025)
         np.random.shuffle(y_train)
 
         # X_val = np.load('./driver_feature_small_driver100/val/images.npy')
@@ -720,13 +720,13 @@ class FerModel(object):
         # np.random.shuffle(y_val)
 
         X_test = np.load('./driver_feature_small_driver100/test/images.npy')
-        X_test = X_test.astype(np.float16)
+        X_test = X_test.astype(np.float32)
         X_test = X_test.reshape([-1, 224, 224, 3])
-        np.random.seed(42)
+        np.random.seed(2025)
         np.random.shuffle(X_test)
 
         y_test = np.load('./driver_feature_small_driver100/test/labels.npy')
-        np.random.seed(42)
+        np.random.seed(2025)
         np.random.shuffle(y_test)
 
         print(X_train.shape)
